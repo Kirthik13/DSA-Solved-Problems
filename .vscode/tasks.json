@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "additional/codeforces/CodeforcesContestBot/",
+			"problemMatcher": [],
+			"label": "npm: install - additional/codeforces/CodeforcesContestBot",
+			"detail": "install dependencies from package"
+		}
+	]
+}
