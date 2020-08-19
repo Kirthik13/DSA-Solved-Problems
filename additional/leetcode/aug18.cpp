@@ -51,7 +51,7 @@ void solve() {
   cin>>n;
   cin>>m;
   if(n>1){
-  j=1*n
+  j=1*n;
   }
 
 }
