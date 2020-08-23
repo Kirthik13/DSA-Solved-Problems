@@ -46,54 +46,31 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
-bool isvowel(char c){
-    if(c=='a'||c=='e'||c=='o'||c=='i'||c=='u'){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
 
 void solve() {
-  int k, m=0;
+  int k, m;
   string s;
   cin>>s;
-string t;
-cin>>t;
-bool check=false;
+  transform(s.begin(),s.end(),s.begin(),::tolower);
+  vector<char>v;
+
   for(int i=0;i<s.size();i++){
-     if(isvowel(s[i]) and !(isvowel(t[i]))||(!(isvowel(s[i]))) and (isvowel(t[i]))){
-
-         
-         check=true;
-         break;
-     }
-     {
-
-     }
-  
-     
+      if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'||s[i]=='y'){
+        continue;
+      }
+      else
+      {
+            v.push_back('.');
+          v.push_back(s[i]);
+      }
       
   
 }
-if(check){
-    cout<<"No"<<nx;
 
+for(auto i:v){
+    cout<<i;
 }
-else 
-{
-    if(s.size()==t.size()){
-    cout<<"Yes"<<nx;
-    }
-    else{
-    cout<<"No"<<nx;
-
-    }
 }
-
-}
-
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
