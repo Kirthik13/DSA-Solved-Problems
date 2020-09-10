@@ -33,12 +33,19 @@ typedef vector<vi>		vvi;
 typedef vector<vl>		vvl;
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 int rng(int lim) {
-	uniform_int_distribution<int> uid(0,lim-1);
-	return uid(rang);
+    uniform_int_distribution<int> uid(0,lim-1);
+    return uid(rang);
 }
 int mpow(int base, int exp); 
 void ipgraph(int n, int m);
 void dfs(int u, int par);
+
+const int mod = 1'000'000'007;
+const int N = 3e5, M = N;
+//=======================
+
+vi g[N];
+int a[N];
 vector<string> split (string s, string delimiter) {
     size_t pos_start = 0, pos_end, delim_len = delimiter.length();
 
@@ -58,25 +65,84 @@ vector<string> split (string s, string delimiter) {
 return res;
 }
 
-const int mod = 1'000'000'007;
-const int N = 3e5, M = N;
-//=======================
-
-vi g[N];
-int a[N];
 
 void solve() {
-  int i, j, n, m;
+
+
+
+   string version1; string version2;
+cin>>version1>>version2;
+        
+
+    
+    
+
+ 
+
+
+
+
+
+
+ 
+
+     string delimiter = ".";
+    vector<string> v1 = split (version1, delimiter);
+    vector<string> v2 = split (version2, delimiter);
+  
+for(auto i:v1){
+    cout<<i<<" ";
 }
+cout<<nx;
+for(auto i:v2){
+    cout<<i<<" ";
+}
+cout<<nx;
+int maxl=max(v1.size(),v2.size());
+for(int i=0;i<maxl;i++){
+int v11=i<v1.size()?(stoi(v1[i])):0;
+int v22=i<v2.size()?(stoi(v2[i])):0;
+if(v11!=v22){
+if(v11>v22){
+    cout<< 1;
+}
+else if(v11<v22){
+    cout<<-1;
+}
+}}
+cout<<0;
+cout<<nx;
+
+
+
+
+
+
+
+        
+    
+
+
+
+
+
+        
+    }
+
+
+
+
+
+
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
+    // int t = 1;
+    // cin >> t;
     // while(t--) {
-    //   solve();
+      solve();
     // }
 
     return 0;
@@ -94,20 +160,20 @@ int mpow(int base, int exp) {
 }
 
 void ipgraph(int n, int m){
-	int i, u, v;
-	while(m--){
-		cin>>u>>v;
+    int i, u, v;
+    while(m--){
+        cin>>u>>v;
     u--, v--;
-		g[u].pb(v);
-		g[v].pb(u);
-	}
+        g[u].pb(v);
+        g[v].pb(u);
+    }
 }
 
 void dfs(int u, int par){
-	for(int v:g[u]){
-		if (v == par) continue;
-		dfs(v, u);
-	}
+    for(int v:g[u]){
+        if (v == par) continue;
+        dfs(v, u);
+    }
 }
 
 
