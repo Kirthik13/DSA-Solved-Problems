@@ -33,12 +33,30 @@ typedef vector<vi>		vvi;
 typedef vector<vl>		vvl;
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 int rng(int lim) {
-	uniform_int_distribution<int> uid(0,lim-1);
-	return uid(rang);
+    uniform_int_distribution<int> uid(0,lim-1);
+    return uid(rang);
 }
 int mpow(int base, int exp); 
 void ipgraph(int n, int m);
 void dfs(int u, int par);
+vector<string> split (string s, string delimiter) {
+    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
+
+    string token;
+    vector<string> res;
+
+    while ((pos_end = s.find (delimiter, pos_start)) != string::npos) {
+
+        token = s.substr (pos_start, pos_end - pos_start);
+        pos_start = pos_end + delim_len;
+
+        res.push_back (token);
+    }
+
+
+    res.push_back (s.substr (pos_start));
+return res;
+}
 
 const int mod = 1'000'000'007;
 const int N = 3e5, M = N;
@@ -46,60 +64,38 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
-bool isvowel(char c){
-    if(c=='a'||c=='e'||c=='o'||c=='i'||c=='u'){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
 
 void solve() {
-  int k, m=0;
-  string s;
-  cin>>s;
-string t;
-cin>>t;
-bool check=false;
-  for(int i=0;i<s.size();i++){
-     if(isvowel(s[i]) and !(isvowel(t[i]))||(!(isvowel(s[i]))) and (isvowel(t[i]))){
+    
+    string s;
+    getline(cin,s);
+    
+ 
 
-         
-         check=true;
-         break;
-     }
-     {
-
-     }
-  
-     
-      
-  
-}
-if(check){
-    cout<<"No"<<nx;
-
-}
-else 
-{
-    if(s.size()==t.size()){
-    cout<<"Yes"<<nx;
+   vector<string> result;
+    stringstream st (s);
+    string item;
+        
+    while (st>>item) {
+        result.push_back (item);
     }
+    if(result.size()>=1){
+    vector<string>::iterator it=result.end()-1;
+      cout<< (*it).size();
+    }
+    
     else{
-    cout<<"No"<<nx;
-
+        cout<<0;
     }
+     
 }
-
-}
-
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-   
+    // int t = 1;
+    // cin >> t;
     // while(t--) {
       solve();
     // }
@@ -119,20 +115,20 @@ int mpow(int base, int exp) {
 }
 
 void ipgraph(int n, int m){
-	int i, u, v;
-	while(m--){
-		cin>>u>>v;
+    int i, u, v;
+    while(m--){
+        cin>>u>>v;
     u--, v--;
-		g[u].pb(v);
-		g[v].pb(u);
-	}
+        g[u].pb(v);
+        g[v].pb(u);
+    }
 }
 
 void dfs(int u, int par){
-	for(int v:g[u]){
-		if (v == par) continue;
-		dfs(v, u);
-	}
+    for(int v:g[u]){
+        if (v == par) continue;
+        dfs(v, u);
+    }
 }
 
 
