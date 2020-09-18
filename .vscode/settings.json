@@ -80,7 +80,10 @@
     "cSpell.ignoreWords": [
         "danik",
         "ipgraph",
+        "logn",
         "mpow",
-        "vpii"
+        "towerofhanoi",
+        "vpii",
+        "xpnb"
     ]
 }
