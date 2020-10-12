@@ -12,10 +12,13 @@ int main()
 		for(i=0;i<n;i++)
 			cin>>a[i];
 		sort(a.rbegin(),a.rend());
-		s1=0;
-		for(i=0;i<=k;i++)
+		s1=a[0];
+		for(i=1;i<k+1;i++)
 			s1+=a[i];
 		cout<<s1<<endl;
+		// for(auto i:a){
+		// 	cout<<i<<" ";
+		// }
  
 	}
 }
