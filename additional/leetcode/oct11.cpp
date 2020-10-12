@@ -66,62 +66,42 @@ vi g[N];
 int a[N];
 
 void solve() {
-//   set<int>s;
-//   auto out=1;
-//   for(auto i:v){
-//       s.insert(i);
-//       while(s.find(out)!=s.end()){
-//           out+=1;
-//       }
-//   }
-// cout<<out;
+ string s;
+ cin>>s;
+bool has[27];
+memset(has,false,26);
+auto i=s.begin();
+string res;
 
-//   vector<int>v={1,3,2,0,-23};
-// int n=v.size();
-// for(int i=0;i<n;i++){
-//     if(v[i]<=0 or v[i]>n){
-//         v[i]=1;
-//     }
-
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// cout<<nx;
-// for(int i=0;i<n;i++){
-//     int x=abs(v[i]);
-//    if(v[x-1]>0) v[x-1]*=-1;
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// for(int i=0;i<n;i++){
-//    if(v[i]>0){
-//        cout<<i+1;
-//    }
-// }
+while(i!=s.end())
+{
+    if(has[i])
+}
+// cout<<res;
 
 
-  
-        string str;
-cin>>str;
-do{
-    cout<<str<<" ";
-}while(next_permutation(str.begin(),str.end()));
-cout<<endl;
+
+
+
+
+
+
+
 
 }
+
+
 
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

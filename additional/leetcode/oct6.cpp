@@ -66,62 +66,50 @@ vi g[N];
 int a[N];
 
 void solve() {
-//   set<int>s;
-//   auto out=1;
-//   for(auto i:v){
-//       s.insert(i);
-//       while(s.find(out)!=s.end()){
-//           out+=1;
-//       }
-//   }
-// cout<<out;
-
-//   vector<int>v={1,3,2,0,-23};
-// int n=v.size();
-// for(int i=0;i<n;i++){
-//     if(v[i]<=0 or v[i]>n){
-//         v[i]=1;
-//     }
-
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// cout<<nx;
-// for(int i=0;i<n;i++){
-//     int x=abs(v[i]);
-//    if(v[x-1]>0) v[x-1]*=-1;
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// for(int i=0;i<n;i++){
-//    if(v[i]>0){
-//        cout<<i+1;
-//    }
-// }
 
 
-  
-        string str;
-cin>>str;
-do{
-    cout<<str<<" ";
-}while(next_permutation(str.begin(),str.end()));
-cout<<endl;
 
+int n=100002;
+
+string s = bitset<64>(n).to_string();
+
+string str(find(s.begin(),s.end(),'1'),s.end());
+for(auto & i:str){
+    if(i=='1'){
+        i='0';
+    }
+    else{
+        i='1';
+    }
 }
-
+unsigned long long value = std::bitset<64>(str).to_ullong();
+    cout<<value;
+    // 2nd method
+//     string s;
+// string st;
+// cin>>s;
+// int res=0;
+// for(int i=0;i<s.size();i++){
+//     int k=int(s[i])-48;
+//     k=k^1;
+//    k<<=i;
+//    res+=k;
+    // char c=char(k)+'0';
+    // st.push_back(c);
+// }
+// cout<<res;
+// cout<<st;
+}
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

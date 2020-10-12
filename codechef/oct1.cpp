@@ -66,52 +66,40 @@ vi g[N];
 int a[N];
 
 void solve() {
-//   set<int>s;
-//   auto out=1;
-//   for(auto i:v){
-//       s.insert(i);
-//       while(s.find(out)!=s.end()){
-//           out+=1;
-//       }
-//   }
-// cout<<out;
+ int no_of_jumps=0;
+ int current=0;
+ int our_city=0;
+ int no_of_cities=0;
+ cin>>no_of_cities>>no_of_jumps>>current>>our_city;
+ vector<bool>v(no_of_cities,false);
+ int i=current;
+ int k=0;
+ int c=0;
+bool ch=false;
+ int j=current;
+ int n=v.size()-1;
 
-//   vector<int>v={1,3,2,0,-23};
-// int n=v.size();
-// for(int i=0;i<n;i++){
-//     if(v[i]<=0 or v[i]>n){
-//         v[i]=1;
-//     }
-
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// cout<<nx;
-// for(int i=0;i<n;i++){
-//     int x=abs(v[i]);
-//    if(v[x-1]>0) v[x-1]*=-1;
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// for(int i=0;i<n;i++){
-//    if(v[i]>0){
-//        cout<<i+1;
-//    }
-// }
-
-
-  
-        string str;
-cin>>str;
 do{
-    cout<<str<<" ";
-}while(next_permutation(str.begin(),str.end()));
-cout<<endl;
+     k=(j+no_of_jumps)%n;
+     j+=no_of_jumps;
+     c+=no_of_jumps;
+     deb(k);
+     v[k]=true;
+     if(v[our_city]){
+         ch=true;
+         break;
+     }
+    
 
+ }while(c<=current);
+
+if(ch){
+    cout<<"YES"<<nx;
 }
-
+else{
+    cout<<"NO"<<nx;
+    }
+}
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);

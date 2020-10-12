@@ -66,62 +66,37 @@ vi g[N];
 int a[N];
 
 void solve() {
-//   set<int>s;
-//   auto out=1;
-//   for(auto i:v){
-//       s.insert(i);
-//       while(s.find(out)!=s.end()){
-//           out+=1;
-//       }
-//   }
-// cout<<out;
-
-//   vector<int>v={1,3,2,0,-23};
-// int n=v.size();
-// for(int i=0;i<n;i++){
-//     if(v[i]<=0 or v[i]>n){
-//         v[i]=1;
-//     }
-
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// cout<<nx;
-// for(int i=0;i<n;i++){
-//     int x=abs(v[i]);
-//    if(v[x-1]>0) v[x-1]*=-1;
-// }
-// for(auto i:v){
-//     cout<<i<<" ";
-// }
-// for(int i=0;i<n;i++){
-//    if(v[i]>0){
-//        cout<<i+1;
-//    }
-// }
-
-
-  
-        string str;
-cin>>str;
-do{
-    cout<<str<<" ";
-}while(next_permutation(str.begin(),str.end()));
-cout<<endl;
-
+    vector<int>nums={3,1,4,1,5};
+    sort(all(nums));
+int k=2;
+vector<pair<int,int>>v;
+for(auto i:nums){
+    auto it=find(nums.begin(),nums.end(),i-k);
+    if(it!=nums.end()){
+    auto itt=find(nums.begin(),nums.end(),i);
+        
+        
+        auto d=distance(itt,it);
+        v.pb(make_pair(i,d));
+    }
+}
+// auto t=make_pair(1,2);
+// v.pb(t);
+for(auto i:v){
+cout<<i.first<<" "<<i.second<<nx;
 }
 
+}
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }
