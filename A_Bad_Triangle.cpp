@@ -66,48 +66,29 @@ vi g[N];
 int a[N];
 
 void solve() {
-  int i, j=0, n, m;
-  vi v;
-  cin>>n>>m;
-  fo(i,n){
-      int t;
-      cin>>t;
-    v.pb(t);
-  }
-  if(m==0){
-      cout<<"0";
-    
-  }
-  else{
-      int c=0;
-
-auto d= distance(v.begin(),min_element(v.begin(), v.end()));
-int k=d;
-do{
-    if(m>=v[k]){
-m-=v[k];
-c++;
-    }
-    else{
-        break;
-    }
-// j++;
-k=(k+1)%n;
-}while(k!=d);
-
-cout<<c;
-  }
+int n,i=0;
+cin>>n;
+while(i<n){
+    cin>>a[i];
+    i++;
+}
+if(a[0]+a[1]>a[n-1]){
+    cout<<"-1"<<nx;
+}
+else{
+    cout<<"1 2 "<<n<<nx;
+}
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

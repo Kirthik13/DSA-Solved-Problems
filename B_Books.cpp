@@ -74,29 +74,25 @@ void solve() {
       cin>>t;
     v.pb(t);
   }
-  if(m==0){
-      cout<<"0";
-    
-  }
-  else{
-      int c=0;
 
-auto d= distance(v.begin(),min_element(v.begin(), v.end()));
-int k=d;
-do{
-    if(m>=v[k]){
-m-=v[k];
-c++;
+
+      int c=0;
+int k=0;
+int sum=0;
+for(int i=0;i<n;i++){
+    sum+=v[i];
+    if(sum>m){
+        sum-=v[k];
+        k++;
     }
     else{
-        break;
+        c++;
     }
-// j++;
-k=(k+1)%n;
-}while(k!=d);
+}
+
+
 
 cout<<c;
-  }
 }
 
 int main() {
