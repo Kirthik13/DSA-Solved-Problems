@@ -1,0 +1,1 @@
+{"name":"Local: Add_Two_Numbers","url":"d:\\krithik\\mycode\\additional\\ladders codedigger\\Add_Two_Numbers.cpp","tests":[{"id":1606016495372,"input":"3 \n1 2\n100 200\n10 40","output":"3\n300\n50"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\krithik\\mycode\\additional\\ladders codedigger\\Add_Two_Numbers.cpp","group":"local","local":true}
