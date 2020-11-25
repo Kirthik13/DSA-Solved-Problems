@@ -71,10 +71,18 @@ void solve()
 {
     ll i, j{}, n, m = 0;
     cin >> n;
-    vl v(n);
-    for (auto &i : v)
-    {
-        cin >> i;
+    vl v(1);
+    cin>>v[0];
+    map<ll,ll>ma;
+     
+    ma[v[0]]++;
+    for(int i=1;i<n;i++){
+        ll h;
+        cin>>h;
+        if(v.back()!=h){
+            v.pb(h);
+                ma[h]++;
+        }
     }
     set<ll> s(all(v));
     if (s.size() == 1)
@@ -83,48 +91,16 @@ void solve()
     }
     else
     {
-        // ll l=0;
-        // ll r=0;
-        ll c=0;
-        vl v2;
-        vl v3;
-        for(int i=0;i<n;i++){
-            // l=i+1;
-            ll r{};
-            j=i+1;
-            if(find(all(v3),v[i])==v3.end()){
-            while(j<n){
-                // deb2(v[i],v[j]);
-                if(v[j]==v[i]){
-                    if(v[j-1]!=v[i]){
-                    c++;
-                    }
-                    r=j;   
-                }
-                    j++;
-                // else{
-                //     j++;
-                // }
-            }
-            if(r<n-1 ){
-            // deb(r);
-            // cout<<"asd";
-                c++;
-            }
-            v2.pb(c);
-            if(i>=0 and i<n){
-                c=1;
-            }
-            else{
-                c=0;
-            }
-            v3.pb(v[i]);
-            }
+        
+        ma[v[0]]--;
+        ma[v[v.size()-1]]--;
+         ll ans=INT_MAX;
+        for(auto i:v){
+            ans=min(ans,ma[i]);
         }
-        cout<<*min_element(all(v2))<<nx;
-        // for(auto i:v2){
-        //     cout<<i<<" ";
-        // }
+        cout<<ans+1<<nx;
+
+     
     }
 }
 
