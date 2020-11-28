@@ -68,19 +68,7 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
-  }
+  cout<<(n*3)/2<<nx;
 }
 
 int main() {

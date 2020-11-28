@@ -66,32 +66,75 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
-  }
+  ll i, j, n, A,B,C,m{};
+  cin>>A>>B>>C>>n;
+  priority_queue<ll>pq;
+  pq.push(A);
+  pq.push(B);
+  pq.push(C);
+//   for(auto i:pq){
+//       cout<<i<<" ";
+//   }
+ll k=pq.top();
+pq.pop();
+while(!pq.empty()){
+    m+=k-pq.top();
+    pq.pop();
+}
+// deb(m);
+n-=m;
+// deb(n);
+A=k;
+B=k;
+C=k;
+// deb(n);
+// cout<<-3%3<<nx;
+if(n%3==0 and n>=0){
+    cout<<"YES"<<nx;
+}
+else{
+    cout<<"NO"<<nx;
+}
+// bool ch=false;
+
+// while(1){
+//     if(n>=3){
+//     A+=1;
+//     B+=1;
+//     C+=1;
+//     n-=3;
+//     }
+//     else{
+//         // ch=true;
+//         break;
+//     }
+// }
+
+// deb2(A,B);
+// deb2(C,n);
+
+// if(A == B and B==C and A==C and n==0)
+// {
+//     cout<<"YES"<<nx;
+// }
+// else{
+//     cout<<"NO"<<nx;
+// }
+//   ll ma=max(A,max(B,C));
+//   ll mi=min(A,min(B,C));
+
+
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

@@ -66,32 +66,50 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
+  ll i, j, x, y,z;
+  set<ll>s;
+  cin>>x>>y>>z;
+  s.emplace(x);
+  s.emplace(y);
+  s.emplace(z);
+  if(s.size()==3){
+      cout<<"NO"<<nx;
+  }
+  else if(x>y and x>z){
+      cout<<"NO"<<nx;
+  }
+  else if(y>z and y>x){
+      cout<<"NO"<<nx;
+  }
+  else if(z>x and z>y){
+      cout<<"NO"<<nx;
+  }
+  else{
+      if(s.size()==1){
+      cout<<"YES"<<nx;
+    //   cout<<max(x,max(y,z))<<" "<<max(x,max(y,z))<<" "<<max(x,max(y,z))<<nx;
+      cout<<max(x,max(y,z))<<" "<<min(x,min(y,z))<<" "<<min(x,min(y,z))<<nx;
+
       }
       else{
-          cout<<"NO"<<nx;
-      s.insert(str);
+      cout<<"YES"<<nx;
+      cout<<max(x,max(y,z))<<" "<<min(x,min(y,z))<<" "<<min(x,min(y,z))<<nx;
       }
-      
   }
+  
+      
+  
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

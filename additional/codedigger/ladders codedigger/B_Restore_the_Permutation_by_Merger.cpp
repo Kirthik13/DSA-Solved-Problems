@@ -68,30 +68,40 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
-  }
+ vl s;
+    for(ll i=0;i<2*n;i++){
+        ll k;
+        cin>>k;
+        if(count(all(s),k)==0){
+            s.pb(k);
+        }
+        else{
+        continue;
+        }
+    }
+    for(auto i:s){
+        cout<<i<<" ";
+    }
+    cout<<nx;
+    // s.insert(2);
+    // s.insert(1);
+    // s.insert(5);
+    // s.insert(0);
+
+    // for(auto i:s){
+    //     cout<<i<<" ";
+    // }
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

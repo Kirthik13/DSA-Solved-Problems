@@ -67,31 +67,35 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
+  string s;
+  cin>>s;
+//   if(s.size()==2){
+//       cout<<s<<nx;
+//   }
+//   else{
+    //   deb(s.size());
+      for(ll i=0;i<s.size();i++){
+          if(i%2==0){
+              cout<<s[i];
+          }
       }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
+    //   if(s.size()%2==0){
+          cout<<s.back();
+    //   }
+      cout<<nx;
   }
-}
+
+// }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

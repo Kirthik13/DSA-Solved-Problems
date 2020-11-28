@@ -66,20 +66,21 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
+  ll i, j{}, n, m;
   cin>>n;
-  set<string>s;
+
   while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
+      cin>>m;
+      if(m==1){
+          j=1;
       }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
+  }
+  if(j==1){
+      cout<<"HARD"<<nx;
+  }
+  else{
+      cout<<"EASY"<<nx;
+
   }
 }
 

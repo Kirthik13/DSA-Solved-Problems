@@ -67,31 +67,49 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
+string s;
+cin>>s;
+// deb(s);
+string k;
+
+    while(1){
+        
+        k.insert(k.begin(),s.back());
+        s.pop_back();
+        if(k=="po"){
+            cout<<"FILIPINO"<<nx;
+            break;
+        }
+        else if(k=="desu" or k=="masu"){
+            cout<<"JAPANESE"<<nx;
+            break;
+        }
+        else if(k=="mnida"){
+            cout<<"KOREAN"<<nx;
+            break;
+
+        }
+    }
+    // k.insert(k.begin(),'a');
+    // k.insert(k.begin(),'b');
+    // k.insert(k.begin(),'a');
+  
+// while(){
+// }
       
-  }
 }
+
+
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

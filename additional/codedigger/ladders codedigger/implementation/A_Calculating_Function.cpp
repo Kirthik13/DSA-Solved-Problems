@@ -65,22 +65,37 @@ const int N = 3e5, M = N;
 vi g[N];
 int a[N];
 
+  ll i, j, n, m{};
 void solve() {
-  ll i, j, n, m;
   cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
+ 
+      if(n%2==0){
+          cout<<n/2;
       }
       else{
-          cout<<"NO"<<nx;
-      s.insert(str);
+                ll  g{};
+                double k{};
+          if(n>1000000000){
+        ll m=(n)-1000000000; 
+        // deb(m);
+             if(m%2==0){
+                 g=n/2;
+      } 
+      else{
+            g=0-ceil(double(m)/double(2));
+
+
       }
-      
-  }
+            k=double(1000000000); 
+          }
+          else{
+              k=double(n);
+          }
+        //   deb2(k,g);
+          cout<<fixed<<setprecision(0)<<0-ceil(k/2)+g<<nx;
+      }
+  
+//   cout<<m<<nx;
 }
 
 int main() {

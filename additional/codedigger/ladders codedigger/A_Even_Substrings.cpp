@@ -64,23 +64,70 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+set<pii>pa;
+ll l1=0;
+ll r1=0;
+bool ch=false;
+set<ll>se;
+vl ses;
+int parti(deque<char>&tem,ll & m,ll &l,ll &r){
+    if(tem.size()==1){
+        return m;
+    }
+    string temp(all(tem));
 
-void solve() {
-  ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
+    // string temp2=temp;
+   
+        auto it=pa.find({l,r});
+        if(it!=pa.end()){
+            ch=true;
+        }
+        else{
+        pa.insert({l,r});
+
+        }
+    
+
+     stringstream sit(temp);
+  ll fll;
+  sit>>fll;
+  if(fll%2==0 and ch==false){
+      m++;
+      se.insert(fll);
+      ses.pb(fll);
   }
+  ch=false;
+  char g=tem.front();
+
+  tem.pop_front();
+  l1=l;
+  r1=r;
+  l++;
+  deque<char>tem1(all(tem));
+  tem.push_front(g);
+  char j=tem.back();
+  tem.pop_back();
+  r++;
+
+  deque<char>tem2(all(tem));
+
+    return parti(tem1,m,l,r)+parti(tem2,m,l1,r1);
+
+    
+}
+void solve() {
+  ll i, j, n, m{};
+  cin>>n;
+  string str;
+
+  cin>>str;
+for(int i=0;i<str.size();i++){
+    if(str[i]%2==0){
+        m+=i+1;
+    }
+}
+cout<<m<<nx;
+
 }
 
 int main() {

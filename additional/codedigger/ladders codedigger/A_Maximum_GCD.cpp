@@ -66,32 +66,64 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
-  }
+  ll i, j, n, m{},g{};
+cin>>n;
+  ll ma=INT_MIN;
+    //   std::cout<<__gcd(12,9)<<nx;
+
+//   if(n%2==0){
+//       m=n-2;
+//       std::cout<<__gcd(n,m)<<nx;
+//   }
+//   else{
+//       n--;
+//       m=n-2;
+//     if(m<=0){
+//         m=1;
+//     }
+//       std::cout<<__gcd(n,m)<<nx;
+//   }
+// priority_queue<int>ps;
+//   cout<<__gcd(9,18);
+// ll p=0;
+// ll q=0;
+// while(n--){
+//     for(ll i=1;i<n;i++){
+//         ll k=__gcd(i,n);
+//         if(ma<k){
+//             // p=i;
+//             // q=n;      
+//             ma=k;
+//         }
+//     }
+// }
+if(n%2==0){
+    m=n/2;
+  cout<<__gcd(m,n)<<nx;
+
+}
+else{
+    n--;
+    m=n/2;
+  cout<<__gcd(m,n)<<nx;
+
+}
+//   deb(ma);
+// deb2(p,q);
+//   cout<<__gcd(4,8);
+
+// cout<<ma<<nx;
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

@@ -68,19 +68,18 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-  set<string>s;
-  while(n--){
-      string str;
-      cin>>str;
-      if(s.find(str)!=s.end()){
-          cout<<"YES"<<nx;
-      }
-      else{
-          cout<<"NO"<<nx;
-      s.insert(str);
-      }
-      
+  vl v;
+  v.pb(0);
+  for(int i=1;i<=n;i++){
+      ll k;cin>>k;v.pb(k);
+
   }
+  for(ll i=1;i<=n;i++){
+      auto it=distance(v.begin(),find(all(v),i));
+    cout<<it<<" ";
+  }
+  
+
 }
 
 int main() {
