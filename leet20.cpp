@@ -66,19 +66,55 @@ vi g[N];
 int a[N];
 
 void solve() {
+  ll i=1, j, n{}, m;
+  char ch;
+  string s;
+  cin>>s;
+  cin>>m;
+  string k;
+//   vl v;
+vl v(s.size());
+v[0]=1;
+while(v[i-1]<m){
+    if(isalpha(s[i-1])){
+        v[i]=1+v[i-1];
+    }
+    else{
+        ll k=(int(s[i-1])-48)*v[i-1];
+         v[i]=(long long)k;   
+    }
+    i++;
+}
+i--;
+while(v[i]>m){
+    i--;
+    if(v[i]<m){
+        m=((m-1)%v[i])+1;
 
-  ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+    }
+}
+while(isdigit(s[i])){
+    i--;
+}
+// cout<<-1%4<<nx;
+// cout<<((0-1)%4)+1<<nx;
+cout<<s.substr(i,1);
+// for(auto i:v){
+//     cout<<i<<" ";
+// }
+// v.erase(v.begin());
+// cout<<nx;
+// for(auto i:v){
+//     cout<<i<<" ";
+// }
 
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
+// for(int i=0;i<v.size();i++){
+//     cout<<v[i]<<" ";
+// }
+// ll p=0;
+// string res;
 
-     
-// cout<<res<<nx;
+
 
 }
 

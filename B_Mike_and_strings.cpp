@@ -66,20 +66,31 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
-
+  cin>>n;
+  vector<string>v;
+  while(n--){
+      string s;
+      cin>>s;
+      
+      v.pb(s);
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
+  int pos=0;
+  int ans=INT_MAX;
+  for(int i=0;i<v.size();i++){
+      for(int j=0;j<v.size();j++){
+        //   cout<<v[j]+v[j]<<nx;
+        // deb2(v[i],v[j]);
+          int c=(v[j]+v[j]).find(v[i]);
+        //   string k=v[j];
+            // deb(c);
+          c==string::npos?ans=-1:pos+=c;
 
-     
-// cout<<res<<nx;
-
+      }
+      ans=min(ans,pos);
+      pos=0;
+  }
+  cout<<ans<<nx;
 }
 
 int main() {

@@ -66,20 +66,24 @@ vi g[N];
 int a[N];
 
 void solve() {
-
-  ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
-
+  ll i, j, n, m{};
+  cin>>n;
+  if(n==1){
+      cout<<0<<endl;
+      return;
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
-
+  
+  while(n!=2){
+      if(n%2==0){
+          n=n/2;
+        m+=n;
+      }
+      else{
+            m+=(n/2);
+          n=(n/2)+1;
+      }
+  }
+  cout<<m+1<<nx;
 }
 
 int main() {

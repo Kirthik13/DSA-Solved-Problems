@@ -63,23 +63,28 @@ const int N = 3e5, M = N;
 //=======================
 
 vi g[N];
-int a[N];
+// int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
-
+  vector<int>v={99,90,4,5};
+  bool ch=false;
+  int a=INT_MAX,b=INT_MAX,c=INT_MAX;
+  for(auto i:v){
+      if(i<=a){
+          a=i;
+      }
+      else if(i<=b and a<i){
+          b=i;
+      }
+      else if(i<=c and a<i and b<i){
+          c=i;
+          ch=1;
+          break;
+      }
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
-
+  cout<<ch;
+  
 }
 
 int main() {

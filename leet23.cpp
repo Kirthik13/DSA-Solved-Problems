@@ -66,19 +66,51 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  cin>>n;
+string s=to_string(n);
+int pos{};
+bool ch=false;
+for(int i=s.size()-2;i>=0;i--){
+    if(s[i]<s[i+1]){
+        pos=i;
+        ch=1;
+        break;
+    }
+}
+if(!ch){
+cout<<-1<<nx;
+return;
+}
+string k;
+k=s.substr(pos+1);
 
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
 
-     
-// cout<<res<<nx;
+deb(k);
+int dif=INT_MAX;
+int pos2{};
+for(int i=0;i<k.size();i++){
+if(k[i]-s[pos]<dif and k[i]-s[pos]>0){
+    dif=k[i]-s[pos];
+    pos2=i;
+}
+}
+s.erase(pos+1);
+swap(s[pos],k[pos2]);
+sort(all(k));
+
+
+s=s+k;
+
+
+stringstream st(s);
+int res;
+st>>res;
+
+if(res==2147483647){
+ cout<< -1;
+ return;
+}
 
 }
 

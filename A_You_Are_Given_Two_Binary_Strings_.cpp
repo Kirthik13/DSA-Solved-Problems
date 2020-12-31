@@ -67,11 +67,8 @@ int a[N];
 
 void solve() {
 
-  ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  ll i, j, n, m=0;
 
-  }
 //   string x,y;
 //   cin>>x;
 //   cin>>y;

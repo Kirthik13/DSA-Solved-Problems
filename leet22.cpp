@@ -66,19 +66,20 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  vl v={1};
+m=3;
 
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
+sort(all(v));
+ll res=v.back()-v.front();
+ll min_v{},max_v{};
+for(int i=0;i<v.size()-1;i++){
+    min_v=min(v[0]+m,v[i+1]-m);
+    max_v=max(v[i]+m,v.back()-m);
+    res=min(max_v-min_v,res);
+}
+cout<<res<<nx;
 
-     
-// cout<<res<<nx;
 
 }
 

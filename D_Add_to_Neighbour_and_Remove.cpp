@@ -64,33 +64,59 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+bool f(int x,int n,int sum,vl v){
+    x=n-x;
+    int val=sum/x;
+    if(sum%x!=0){
+        return false;
+    }
+    int cur=0;
+    for(int i=0;i<n;i++){
+        cur+=v[i];
+        if(cur==val){
+            cur=0;
+            // break;
+            // return true;
 
+        }
+        else if(cur>val){
+            return false;
+        }
+    }
+    return cur==0;
+}
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  cin>>n;
+vl v(n);
+for(auto &i:v){
+    cin>>i;
+}
+set<ll>st(all(v));
+if(st.size()==1){
+    cout<<0<<nx;
+    return;
 
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
-
+}
+ll sum=accumulate(all(v),0);
+for(int i=0;i<n;i++){
+    if(f(i,n,int(sum),v)){
+        cout<<i<<nx;
+        return;
+    }
+}
+cout<<-1<<nx;
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

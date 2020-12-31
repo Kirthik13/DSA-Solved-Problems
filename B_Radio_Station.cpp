@@ -66,20 +66,29 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  cin>>n>>m;
+map<string,string>map1;
+  while(n--){
+      string s,k;
+      cin>>s>>k;
+    map1.insert(make_pair(k,s));
 
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
 
-     
-// cout<<res<<nx;
+  while(m--){
+       string s,k;
+      cin>>s>>k;
+ 
+      k.pop_back();
+      cout<<s<<" "<<k<<";"<<" "<<"#";
+      cout<<map1[k]<<nx;
 
+
+
+
+   
+  }
 }
 
 int main() {

@@ -66,31 +66,39 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
-
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
-
+  cin>>n;
+if(n<=45){
+    vl v;
+    for(int i=9;i>=1;i--){
+        if(n>=i){
+            n-=i;
+            v.pb(i);
+        }
+    }
+    sort(all(v));
+    for(auto i:v){
+        cout<<i;
+    }
+    cout<<nx;
 }
+else{
+    cout<<-1<<nx;
+}
+
+    
+  }
+
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

@@ -66,20 +66,59 @@ vi g[N];
 int a[N];
 
 void solve() {
+  ll i, j,m{},n;
+  vl v={7,90,5,1,100,10,10,2};
+  ll chance=1;
+  ll alice{};
+  ll bob{};
+  ll tot=accumulate(all(v),0);
+  deque<ll>dq(all(v));
+  while(dq.size()>1){
+      deb2(alice,bob);
+      if(tot-dq.front()>=tot-dq.back()){
+            // cout<<"front"<<nx;
+            // deb(dq.front());
+            ll sum=tot-dq.front();
+            tot-=dq.front();
+          dq.pop_front();
+             if(chance){
+                    alice+=sum;
+                    chance=0;
+          }
+          else{
+              bob+=sum;
+             
+                    chance=1;
+          }
+                  for(auto i:dq ){
+                cout<<i<<" ";
+            }
+            cout<<nx;
 
-  ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+      }
+      else{
+            // cout<<"back"<<nx;
+            // deb(dq.back());
 
+                ll sum=tot-dq.back();
+            tot-=dq.back();
+          dq.pop_back();
+             if(chance){
+                    alice+=sum;
+                    chance=0;
+          }
+          else{
+              bob+=sum;
+              chance=1;
+          }
+            for(auto i:dq ){
+                cout<<i<<" ";
+            }
+            cout<<nx;
+      }
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
-
+// deb2(alice,bob);
+cout<<alice-bob<<nx;
 }
 
 int main() {

@@ -66,19 +66,31 @@ vi g[N];
 int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
-
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
-
-     
-// cout<<res<<nx;
+  vector<int>v={-4,-1,0,3,10};
+vector<int>pos;
+vector<int>negative;
+for(auto i:v){
+    if(i<0){
+        negative.pb(i*i);
+    }
+    else{
+        pos.pb(i*i);
+    }
+}
+// for(auto i:pos){
+//     cout<<i<<" ";
+// }
+// for(auto i:negative){
+//     cout<<i<<" ";
+// }
+sort(all(pos));
+sort(all(negative));
+vector<int>res(pos.size()+negative.size());
+merge(all(pos),all(negative),res.begin());
+// for(auto i:res){
+//     cout<<i<<" ";
+// }
 
 }
 

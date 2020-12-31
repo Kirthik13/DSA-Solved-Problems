@@ -66,19 +66,18 @@ vi g[N];
 int a[N];
 
 void solve() {
+  int i, j,  m{};
+  string n;
+  cin>>n;
+  for(auto i:n){
+      int c=int(i)-48;
+      deb2(c,m);
+      m=max(m,c);
 
-  ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
 
   }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
+cout<<m;
 
-     
-// cout<<res<<nx;
 
 }
 

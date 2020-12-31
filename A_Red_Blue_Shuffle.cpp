@@ -63,34 +63,50 @@ const int N = 3e5, M = N;
 //=======================
 
 vi g[N];
-int a[N];
+// int a[N];
 
 void solve() {
-
   ll i, j, n, m;
-  for(int i=0;i<3;cout<<i<<nx)
-  {
+  cin>>n;
+  string a,b;
+  cin>>a>>b;
 
-  }
-//   string x,y;
-//   cin>>x;
-//   cin>>y;
-// for(int i=0;i<x)
 
-     
-// cout<<res<<nx;
-
+ll blu{},red{};
+for(int i=0;i<n;i++){
+    if(a[i]>b[i]){
+        red++;
+    }
+    else if(b[i]>a[i]){
+        blu++;
+    }
+    else{
+        red++;
+        blu++;
+    }
+}
+// deb2(red,blu);
+if(red>blu){
+    cout<<"RED"<<nx;
+}
+else if(red<blu)
+{
+    cout<<"BLUE"<<nx;
+}
+else{
+    cout<<"EQUAL"<<nx;
+}
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }
