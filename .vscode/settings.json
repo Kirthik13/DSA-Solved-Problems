@@ -85,5 +85,6 @@
         "towerofhanoi",
         "vpii",
         "xpnb"
-    ]
+    ],
+    "C_Cpp.errorSquiggles": "Disabled"
 }
