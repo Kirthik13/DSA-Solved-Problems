@@ -1,72 +1,167 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define nx '\n'
+#define gc getchar_unlocked
+#define fo(i,n) for(i=0;i<n;i++)
+#define Fo(i,k,n) for(i=k;k<n?i<n:i>n;k<n?i+=1:i-=1)
+#define foi(i) for(auto i=v.begin();i!=v.end();i++)
+#define ll long long int
+#define si(x)	scanf("%d",&x)
+#define sl(x)	scanf("%lld",&x)
+#define ss(s)	scanf("%s",s)
+#define pi(x)	printf("%d\n",x)
+#define pl(x)	printf("%lld\n",x)
+#define ps(s)	printf("%s\n",s)
+#define deb(x) cout << #x << "=" << x << endl
+#define deb2(x, y) cout << #x << "=" << x << "," << #y << "=" << y << endl
+#define pb push_back
+#define mp make_pair
+#define F first
+#define S second
+#define all(x) x.begin(), x.end()
+#define clr(x) memset(x, 0, sizeof(x))
+#define sortall(x) sort(all(x))
+#define tr(it, a) for(auto it = a.begin(); it != a.end(); it++)
+#define PI 3.1415926535897932384626
+typedef pair<int, int>	pii;
+typedef pair<ll, ll>	pl;
+typedef vector<int>		vi;
+typedef vector<ll>		vl;
+typedef vector<pii>		vpii;
+typedef vector<pl>		vpl;
+typedef vector<vi>		vvi;
+typedef vector<vl>		vvl;
+mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
+int rng(int lim) {
+    uniform_int_distribution<int> uid(0,lim-1);
+    return uid(rang);
+}
+int mpow(int base, int exp); 
+void ipgraph(int n, int m);
+void dfs(int u, int par);
+vector<string> split (string s, string delimiter) {
+    size_t pos_start = 0, pos_end, delim_len = delimiter.length();
 
-bool isSafe(int row, int col, int n, vector<int> &queenArrangement){
-    int i,j,temp;
+    string token;
+    vector<string> res;
 
-    //Checks if it is row safe
-    for(int r:queenArrangement){
-        if(r == row) return false;
+    while ((pos_end = s.find (delimiter, pos_start)) != string::npos) {
+
+        token = s.substr (pos_start, pos_end - pos_start);
+        pos_start = pos_end + delim_len;
+
+        res.push_back (token);
     }
 
-    //Check if it upper diagonal safe
-    temp = row-1;
-    for(i=queenArrangement.size()-1;i>=0;i--){
-        if(temp <= 0) break;
-        if(temp == queenArrangement[i]) return false;
-        temp--;
-    }
 
-    //Check if it is lower diagonal safe
-    temp = row+1;
-    for(i=queenArrangement.size()-1;i>=0;i--){
-        if(temp > n) break;
-        if(temp == queenArrangement[i]) return false;
-        temp++;
+    res.push_back (s.substr (pos_start));
+return res;
+}
+
+const int mod = 1'000'000'007;
+const int N = 3e5, M = N;
+//=======================
+
+vi g[N];
+int a[N];
+ll n;
+vector<vl>st;
+bool issafe(int row,int col,vl &res){
+    for(auto r:res){
+        if(r==row){
+            return 0;
+        }
+    }
+    int tem=row-1;
+    for(int i=res.size()-1;i>=0;i--){
+        if(tem<=0){
+            break;
+        }
+        if(tem==res[i]){
+            return 0;
+        }
+        tem--;
+    }
+    tem=row+1;
+    for(int i=res.size()-1;i>=0;i--){
+        if(tem>n){
+            break;
+        }
+        if(tem==res[i]){
+            return 0;
+        }
+        tem++;
     }
 
     return true;
-}
 
-void nqueen(int col, int n, vector<int> &queenArrangement, vector<vector<int> > &possibleQueenArrangements){
-    //IT IS 1-BASED INDEXING, SO WE USED col > n, INSTEAD OF col == n
-    if(col > n){
-        possibleQueenArrangements.push_back(queenArrangement);
-        return;
+}
+void isqueen(int col,vl &res){
+    if(col>n){
+        st.pb(res);
+        return ;
     }
-    int row;
-    for(row = 1;row <= n;row++){
-        if(isSafe(row,col,n,queenArrangement)){
-            queenArrangement.push_back(row);
-            nqueen(col+1,n,queenArrangement,possibleQueenArrangements);
-            queenArrangement.pop_back();
+    for(int i=1;i<=n;i++){
+        if(issafe(i,col,res)){
+            res.pb(i);
+            isqueen(col+1,res);
+            res.pop_back();
         }
     }
 }
+void solve() {
+  ll i, j, m;
+  cin>>n;
+  vl res;
+  isqueen(1,res);
+for(auto i:st){
+    for(auto j:i){
+        cout<<j<<" ";
+    }
+    cout<<nx;
+}
+}
 
-void print(vector<vector<int> > &possibleQueenArrangements){
-    if(possibleQueenArrangements.size() == 0){
-        cout<<"-1"<<endl;
-        return;
-    }
-    for(auto arrangement: possibleQueenArrangements){
-        cout<<"[";
-        for(auto row : arrangement){
-            cout<<row<<" ";
-        }
-        cout<<"] ";
-    }
-    cout<<endl;
+
+int main() {
+    ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    srand(chrono::high_resolution_clock::now().time_since_epoch().count());
+
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
+       solve();
+    // }
+
+    return 0;
 }
-int main(){
-    int t,n;
-    cin>>t;
-    while(t--){
-        cin>>n;
-        vector<int> queenArrangement;
-        vector<vector<int> > possibleQueenArrangements;
-        nqueen(1,n,queenArrangement,possibleQueenArrangements);
-        print(possibleQueenArrangements);
-    }
-    return 0; 
+
+int mpow(int base, int exp) {
+  base %= mod;
+  int result = 1;
+  while (exp > 0) {
+    if (exp & 1) result = ((ll)result * base) % mod;
+    base = ((ll)base * base) % mod;
+    exp >>= 1;
+  }
+  return result;
 }
+
+void ipgraph(int n, int m){
+    int i, u, v;
+    while(m--){
+        cin>>u>>v;
+    u--, v--;
+        g[u].pb(v);
+        g[v].pb(u);
+    }
+}
+
+void dfs(int u, int par){
+    for(int v:g[u]){
+        if (v == par) continue;
+        dfs(v, u);
+    }
+}
+
+
