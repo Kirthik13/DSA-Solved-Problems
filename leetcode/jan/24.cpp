@@ -64,24 +64,51 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+vector<vl>v;
+void dia(int row,int col){
+    int n=v.size();
+    int m=v[0].size();
+    int rt=row;
+    int ct=col;
+    multiset<ll>ms;
+    while(row<n and col<m){
+        ms.insert(v[row][col]);
+        row++;
+        col++;
+    }
+    int r=rt;
+    int c=ct;
 
+    for(auto i:ms){
+        v[r++][c++]=i;
+    }
+}
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-//   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
-
+  ll i, j, n, m{};
+  v={{3,3,1,1},{2,2,1,2},{1,1,1,2}};
+for(int i=0;i<v.size();i++){
+    dia(i,0);
+}
+for(int i=0;i<v[0].size();i++){
+    dia(0,i);
+}
+for(auto i:v){
+    for(auto j:i){
+        cout<<j<<" ";
+    }
+    cout<<nx;
+}
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

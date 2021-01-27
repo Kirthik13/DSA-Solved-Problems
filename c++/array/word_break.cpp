@@ -64,24 +64,47 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+ll n;
+vector<string>v;
 
+bool wo(string &s,int i,int j){
+    if(j==n){
+        if(i==n){
+            return true;
+        }
+        return false;
+    }
+    if(find(all(v),s.substr(i,j-i+1))!=v.end()){
+        if(wo(s,j+1,j+1)){
+            return true;
+        }
+        return wo(s,i,j+1);
+    }
+    else{
+ return wo(s,i,j+1);
+       
+    }
+}
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-//   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
-
+  ll i, j,  m;
+  string s;
+  cin>>s;
+  n=s.size();
+  v={"le","et","co","d","e"};
+if(wo(s,0,0)){
+    cout<<"asd";
+}
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

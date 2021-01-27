@@ -66,22 +66,25 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
+  ll i=1, j, n, m;
   cin>>n;
-//   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
-
+  ll res{};
+  while(i<=n){
+      res=((res<<(1+int(log2(i))))%mod+i)%mod;
+      ++i;
+  }
+ cout<<res;
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

@@ -67,9 +67,55 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
-//   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
+  string s1,s2;
+  cin>>s1>>s2;
+ map<char,int>m1;
+ map<char,int>m2;
+    set<char>st1;
+    set<char>st2;
+  for(auto i:s1){
+      m1[i]++;
+    // st1.insert(i);
+  }
+  for(auto i:s2){
+      m2[i]++;
+    // st2.insert(i);
+  }
+  vl fr1;
+  vl fr2;
+  vector<char>ch1;
+  vector<char>ch2;
+  for(auto i:m1){
+     ch1.pb(i.F);
+     fr1.pb(i.second);
+  }
+  for(auto i:m2){
+     ch2.pb(i.F);
+     fr2.pb(i.second);
+  }
+  sort(all(fr1));
+  sort(all(ch1));
+  sort(all(ch2));
+  sort(all(fr2));
+//   for(auto i:ch1){
+//       cout<<i<<" ";
+//   }
+//   cout<<nx;
+//   for(auto i:ch2){
+//       cout<<i<<" ";
+//   }
+//   cout<<nx;
+  for(auto i:fr1){
+      cout<<i<<" ";
+  }
+  cout<<nx;
+  for(auto i:fr2){
+      cout<<i<<" ";
+  }
+  cout<<nx;
+  if(((ch1==ch2) and (fr1==fr2) )and (s1.size()==s2.size())){
+      cout<<"true";
+  }
 
 }
 
@@ -77,11 +123,11 @@ int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    int t = 1;
-    cin >> t;
-    while(t--) {
+    //int t = 1;
+    //cin >> t;
+    // while(t--) {
        solve();
-    }
+    // }
 
     return 0;
 }

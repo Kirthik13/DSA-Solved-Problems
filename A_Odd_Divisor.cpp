@@ -69,10 +69,24 @@ void solve() {
   ll i, j, n, m;
   cin>>n;
 //   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
+if(n%2!=0){
+cout<<"YES"<<nx;
 
+return;
 }
-
+if(n%2==0){
+    ll k=n/2;
+    while(k>1){
+        if(k%2!=0 and k!=1){
+            cout<<"YES"<<nx;
+            return;
+        }
+        k=k/2;
+        
+    }
+cout<<"NO"<<nx;
+}
+}
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());

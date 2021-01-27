@@ -68,9 +68,16 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-//   cout<<sqrt(n)<<nx;
-(n%2 and n%4)?cout<<"YES"<<nx:cout<<"NO"<<nx;
-
+   
+    ll x,y;
+    for(int i=0;i<=(n/2021);i++){
+        ll x=(n-i*2021)/(2020);
+        if((x*2020)+(i*2021)==n){
+            cout<<"YES"<<nx;
+            return;
+        }
+    }
+    cout<<"NO"<<nx;
 }
 
 int main() {

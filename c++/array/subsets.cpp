@@ -72,7 +72,9 @@ set<vl> ge(vl v,set<vl>&s,vl &cur,ll i,ll n){
     ge(v,s,cur,i+1,n);
     cur.pb(v[i]);
     ge(v,s,cur,i+1,n);
+    
     cur.pop_back();
+ 
     return s;
 
 }
@@ -83,15 +85,15 @@ void solve() {
   set<vl>s;
 set<vl>res=ge(v,s,cur,0,v.size());
 
-  for(auto i:res){
-      ++m;
+//   for(auto i:res){
+//       ++m;
      
-      cout<<m<<":"<<" ";
-      for(auto j:i){
-          cout<<j<<" ";
-      }
-      cout<<nx;
-  }
+//       cout<<m<<":"<<" ";
+//       for(auto j:i){
+//           cout<<j<<" ";
+//       }
+//       cout<<nx;
+//   }
 }
 
 int main() {
