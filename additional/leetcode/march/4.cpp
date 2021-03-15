@@ -67,15 +67,6 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
-
-
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
-  }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
 }
 
 int main() {

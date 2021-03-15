@@ -67,15 +67,47 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
+  vl v1={1,4,7,10};
+  vl v2={2,5,9};
 
+  int p1=0;
+  while(p1<=v2.size()){
+    //   deb(v1[p1]);
+      if(v2[0]<v1[p1]){
+    //   deb(v1[p1]);
 
-  if(n%2==0){
+          swap(v2[0],v1[p1]);
+          bool ch=0;
+          for(int i=1;i<v2.size();i++){
+              if(v2[i]>v2[0]){
+                  ch=1;
+                  swap(v2[i-1],v2[0]);
+                  break;
+              }
+          }
+          
+        //   if(ch){
+        //       swap(v2[0],v2[v2.size()-1]);
+        //   }
+      }
+ 
+          p1++;
+      
 
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
+    
   }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+  for(int i=v2.size()-1;i>=0;i--){
+      if(v2[i]<v2[0]){
+          swap(v2[i],v2[0]);
+        //   break;
+      }
+  }
+  for(auto i:v1){
+      cout<<i<<" ";
+  }
+  for(auto i:v2){
+      cout<<i<<" ";
+  }
 }
 
 int main() {

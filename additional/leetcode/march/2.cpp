@@ -66,16 +66,24 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
+  vl v={1,2,2,4};
 
 
-  if(n%2==0){
+int g2=accumulate(all(v),0);
+set<int>s(all(v));
 
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
-  }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+int act{};
+int exp=(v.size()*(v.size()+1))/2;
+for(auto i:s){
+act+=i;
+}
+int g1=abs(exp-act);
+g2+=g1;
+cout<<g2-exp<<" "<<g1<<nx;
+
+
+
+
 }
 
 int main() {

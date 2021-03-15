@@ -64,18 +64,42 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+vector<string>v;
+void gen(string s,int st,string par){
+ if(par.size()>=s.size()){
+     v.pb(par);
+     return;
+ }
+ deb(st);
+
+ 
+      if(isalpha(s[st])){
+          char l=tolower(s[st]);
+          char u=toupper(s[st]);
+          gen(s,st+1,par+l);
+          gen(s,st+1,par+u);
+        //   gen(s,st+1,par+l);
+      }
+        // par.pb(s[i]);
+        else{
+        gen(s,st+1,par+s[st]);
+        }
+
+
+
+ }
+ 
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
+  string s,par;
+  cin>>s;
 
+  gen(s,0,par);
 
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
+  for(auto i:v){
+      cout<<i<<" ";
   }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
 }
 
 int main() {

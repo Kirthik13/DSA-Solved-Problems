@@ -68,14 +68,14 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-
-
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
+  int dp[n+1];
+  dp[0]=1;
+  dp[1]=1;
+  dp[2]=2;
+  for(int i=3;i<=n;i++){
+      dp[i]=2*dp[i-1]+dp[i-3];
   }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+  deb(dp[n]);
 }
 
 int main() {

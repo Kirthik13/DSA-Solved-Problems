@@ -66,16 +66,23 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
+  ll i, j=1, n, m{};
   cin>>n;
-
-
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
+  deque<ll> v(n);
+  for(auto &i:v){
+      cin>>i;
   }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+  sort(all(v));
+   while(!v.empty()){
+       if(v.front()>=j){
+           m++;
+       j++;
+           
+       }
+       v.pop_front();
+   }
+
+    cout<<m<<nx;
 }
 
 int main() {

@@ -63,19 +63,53 @@ const int N = 3e5, M = N;
 //=======================
 
 vi g[N];
-int a[N];
+// int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
+  ll i, j, n, m{};
+    cin>>n;
+    // string s;
+    // cin>>s;
+    // deque<char>d;
+    // deque<char>d2;
+    // for(int i=0;i<s.size();i+=2){
+    //     char k=s[i];
+    //     d.push_back(k);
+    // }
+    // for(int i=1;i<s.size();i+=2){
+    //     char k=char(s[i]+32);
+    //     if(d.front()==k){
+    //         d.pop_front();
+    //     }
+    //     else{
+    //         auto it=find(all(d2),k);
+    //         if(it!=d2.end()){
+    //             d2.erase(it);
 
+    //         }
+    //         else{
+    //         m++;
+           
 
-  if(n%2==0){
+    //         }
+    //          d2.pb(d.front());
+    //         d.pop_front();
+    //     }
+    // }
+    int arr[26]={0};
+    char a,b;
+    for(int i=0;i<n-1;i++){
+        cin>>a>>b;
+    arr[a-97]++;
+        if(arr[b-65]==0){
+            m++;
+        }
+        else{
+            arr[b-65]--;
+        }   
+    }
+    cout<<m<<nx;
 
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
-  }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
 }
 
 int main() {

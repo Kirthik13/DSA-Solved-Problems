@@ -67,16 +67,25 @@ int a[N];
 
 void solve() {
   ll i, j, n, m;
-  cin>>n;
-
-
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
-  }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+  vl v={4,2,3,6,0,1};
+//   vector<bool> v2(v.size(),false);
+//   for(auto i:v){
+//       v2[i]=1;
+//   }
+//   for(auto i=0;i<=v2.size();i++){
+//       if(v2[i]==0){
+//           cout<<i<<nx;
+//       }
+//   }
+ll expected_res=v.size()*(v.size()+1)/2;
+ll act_res=0;
+for(auto i:v){
+    act_res+=i;
 }
+deb(expected_res-act_res);
+}
+
+
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);

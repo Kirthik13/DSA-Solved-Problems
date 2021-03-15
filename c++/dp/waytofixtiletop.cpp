@@ -64,18 +64,31 @@ const int N = 3e5, M = N;
 
 vi g[N];
 int a[N];
+int ways(int n,int dp[]){
+    int k;
+ 
+    if(dp[n]!=INT_MAX){
+        return dp[n];
+    }
+    else{
+    // k=ways(n-1,dp)+ways(n-2,dp);
+    return dp[n]=ways(n-1,dp)+ways(n-2,dp);
+    }
+    // dp[n]=k;
+    // return dp[n];
 
+}
 void solve() {
   ll i, j, n, m;
   cin>>n;
-
-
-  if(n%2==0){
-
-      cout<<((n/2) +1) *((n/2)+1)<<nx;
-    return;
-  }
-cout<<2*((n/2)+1)*((n/2)+2)<<nx;
+int dp[n+1];
+  dp[0]=1;
+  dp[1]=1;
+for(int i=2;i<=n;i++){
+    dp[i]=INT_MAX;
+}
+  int res=ways(n,dp);
+  deb(res);
 }
 
 int main() {
