@@ -66,42 +66,34 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
+  ll i, j, n, m{};
   cin>>n;
-  vi v;
-  for(auto i=0;i<n;i++){
+  map<int,int>ma;
+for(int i=1;i<=n;i++){
     int k;
     cin>>k;
-    v.pb(k);
-  }
+    m+=ma[k-i]++;
+    // ma[k-i]++;
+}
+// for(auto i:ma){
+//     int z=i.second;
+//     m+=(i.second*(i.second-1))/2;
+// }
+cout<<m<<nx;
+ 
 
 
-  queue<int>q;
-  deb(v[0]);
-  for(int i=0;i<n;i++){
-      deb2(v[i],i+1);
-      if(v[i]==i+1){
-       
-          q.push(i);
-      }
-  }
-  int res{};
-  while(!q.empty()){
-      q.pop();
-      res+=q.size();
-  }
-  cout<<res<<nx;
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    // int t = 1;
-    // cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

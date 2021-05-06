@@ -66,42 +66,56 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j, n, m;
-  cin>>n;
-  vi v;
-  for(auto i=0;i<n;i++){
-    int k;
-    cin>>k;
-    v.pb(k);
-  }
+ int num ;// a variable of int data type
+  cin>>num;
+  string str; // a variable of str data type
 
-
-  queue<int>q;
-  deb(v[0]);
-  for(int i=0;i<n;i++){
-      deb2(v[i],i+1);
-      if(v[i]==i+1){
-       
-          q.push(i);
-      }
+  // using the stringstream class to insert an int and
+  // extract a string
+  stringstream ss;  
+  ss << num;  
+  ss >> str;  
+  if(str.size()==1){
+      cout<<num<<nx;
+      return;
   }
   int res{};
-  while(!q.empty()){
-      q.pop();
-      res+=q.size();
+  set<char>st(all(str));
+//   deb(str);
+  if(st.size()==1){
+      res+=int(*(st.begin()))-48;
   }
-  cout<<res<<nx;
+  else{
+      int si=str.size();
+      string dum;
+      while(si--){
+      dum.pb(str.front());
+      }
+    //   deb2(dum,str.front());
+      stringstream si2(dum);
+      int no;
+      si2>>no;
+      if(no<=num){
+          res+=int(str.front())-48;
+      }
+      else{
+          res+=int(str.front())-49;
+      }
+  
+  }
+//   cout<<res;
+  cout<<(str.size()-1)*9+res<<nx;
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    // int t = 1;
-    // cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

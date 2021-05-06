@@ -68,40 +68,42 @@ int a[N];
 void solve() {
   ll i, j, n, m;
   cin>>n;
-  vi v;
-  for(auto i=0;i<n;i++){
-    int k;
-    cin>>k;
-    v.pb(k);
-  }
 
+      string s;
+      cin>>s;
+      string s2=s;
+     set<char>sam(all(s2));
 
-  queue<int>q;
-  deb(v[0]);
-  for(int i=0;i<n;i++){
-      deb2(v[i],i+1);
-      if(v[i]==i+1){
-       
-          q.push(i);
+      if(sam.size()==1){
+          cout<<"YES"<<nx;
+          return;
+
       }
+    //   reverse(all(s2));
+vector<char>v;    
+      for(auto i=0;i<s.size();i++ ){
+          if(!v.empty() and find(all(v),s[i])!=v.end()){
+              if(s[i-1]!=s[i]){
+              cout<<"NO"<<nx;
+              return;
+              }
+          }
+          v.pb(s[i]);
+
+      }
+      cout<<"YES"<<nx;
   }
-  int res{};
-  while(!q.empty()){
-      q.pop();
-      res+=q.size();
-  }
-  cout<<res<<nx;
-}
+
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    // int t = 1;
-    // cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }
