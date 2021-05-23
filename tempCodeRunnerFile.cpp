@@ -1,3 +1,4 @@
- for(auto i:m){
-        cout<<i.second.first<<" "<<i.second.second<<endl;
-    }
+  // while (!pq.empty() and nums[pq.back().second] <= nums[i])
+        // {
+        //     pq.pop_back();
+        // }
