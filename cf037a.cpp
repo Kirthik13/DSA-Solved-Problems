@@ -58,7 +58,7 @@ vector<string> split (string s, string delimiter) {
 return res;
 }
 
-const int mod = 1000000007;
+const int mod = 1'000'000'007;
 const int N = 3e5, M = N;
 //=======================
 
@@ -66,39 +66,45 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j,cnt{}, n, m=0;
-  cin>>n>>m;
-map<ll,ll>ma;
-map<ll,ll>ma2;
-
-
-   ll t{};
-for(int i=1;i<=n;i++){
-ll k=i%5;
-ma[k]++;
+  ll i, j, n, m;
+  cin>>n;
+  vector<int>v(2*n);
+for(auto &i:v){
+    cin>>i;
 }
-for(int i=1;i<=m;i++){
-ll k=i%5;
-ma2[k]++;
+int ev{},od{};
+for(auto i:v){
+    if(i%2){
+        od++;
+    }
+    else{
+        ev++;
+    }
+        
 }
-cnt=ma[0]*ma2[0];
-for(int i=1;i<=4;i++){
-    cnt+=ma[i]*ma2[5-i];
+if(ev!=od){
+    cout<<"No"<<"\n";
+    return;
 }
+cout<<"Yes"<<"\n";
 
-cout<<cnt<<nx;
-
+// sort(all(v),[](auto a,auto b){
+// return a%2==0;
+// });
+// for(auto i:v){
+//     cout<<i;
+// }
 }
 
 int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }

@@ -58,7 +58,7 @@ vector<string> split (string s, string delimiter) {
 return res;
 }
 
-const int mod = 1000000007;
+const int mod = 1'000'000'007;
 const int N = 3e5, M = N;
 //=======================
 
@@ -66,27 +66,17 @@ vi g[N];
 int a[N];
 
 void solve() {
-  ll i, j,cnt{}, n, m=0;
-  cin>>n>>m;
-map<ll,ll>ma;
-map<ll,ll>ma2;
+  ll d,x,y,z;
+  cin>>d>>x>>y>>z;
 
+  int m1=0;
+  int m2=0;
+cout<<max(7*x,d*y+(7-d)*z)<<"\n";
+//   for(int i=0;i<7;i++){
+//       m1+=2;
+//       m2+=
+//   }
 
-   ll t{};
-for(int i=1;i<=n;i++){
-ll k=i%5;
-ma[k]++;
-}
-for(int i=1;i<=m;i++){
-ll k=i%5;
-ma2[k]++;
-}
-cnt=ma[0]*ma2[0];
-for(int i=1;i<=4;i++){
-    cnt+=ma[i]*ma2[5-i];
-}
-
-cout<<cnt<<nx;
 
 }
 
@@ -94,11 +84,11 @@ int main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-    //int t = 1;
-    //cin >> t;
-    // while(t--) {
+    int t = 1;
+    cin >> t;
+    while(t--) {
        solve();
-    // }
+    }
 
     return 0;
 }
