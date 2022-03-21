@@ -1,11 +1,5 @@
-while(i<n)
+for(auto i:v)
 // {
-//     if(v[i]!=v2.begin()->first)
-//     {
-//         v2[v[i]]=v2.begin()->second;
-//         v[i]=v2.begin()->first;
-//         v2.erase(v2.begin());
-//         cnt++;
-//     }
-//     i++;
+//     cout<<i<<" ";
 // }
+// cout<<nx;
